@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Показания</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <%- include('blocks/menu.ejs') %>
+    <h1>Предыдущие показания:</h1>
+
+    <%let arr={"ЛС":"34534",
+    "ГВС:Показание":"3434",
+    "Электричество:T1":"453",
+    "Электричество:T2":"4535",
+    "Газ:Показание":"45"}; %>
+    <table>
+      
+        <tr>
+            
+            <%for(let key in arr){%>
+            
+                <td><%=key%></td>
+                
+                <% } %>
+            
+        </tr>
+        
+            <% for(let i=0; i<data.length; i++) { %>
+                <tr>
+                   
+                    <%  for(let k in arr){%>
+                    
+                    <td><%= data[i][k] %></td>
+                    <% } %>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>
